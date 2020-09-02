@@ -7,20 +7,21 @@
 
 	.main-list
 		.product
-			.product-list
-				.product-name
-					商品名
-				.note
-					メモ
-				.date-addend
-					追加日
-			%input.delete-button{"type":	"reset","value":	"削除" }
-	
+			- @shoppings.each do |shopping| 
+				.product-list
+					.product-name
+						= shopping.name
+					.note
+						= shopping.note 
+					.date-addend
+						= shopping.created_at.strftime("%Y年%m月%d日 %H時%M分")
+					%input.delete-button{"type":	"reset","value":	"削除" }
+
 	.right-side
 
 
 .footer
-	%input.product-name{"type":	"text", "placeholder": "商品名"}
-	%input.product-note{"type":	"text", "placeholder": "メモ"}
-	%input.product-button{"type":	"submit","value":	"追加" }
-	
+	= form_with model: [@shopping], html: {class: "form"}, local: true do |f|
+		= f.text_field :name, class: 'product-name', 'placeholder': '商品名'
+		= f.text_field :note, class: 'product-note', 'placeholder': 'メモ'
+		= f.submit '追加', class: 'product-button'
