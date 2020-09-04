@@ -23,6 +23,7 @@
 		background-color: #6b778d;
 		width: calc(100vw - 200px - 200px);
 		height: calc(100vh - 112px - 112px);
+		overflow: scroll;
 		.product{	
 			margin: 32px 0 0 10px;
 			.product-list{

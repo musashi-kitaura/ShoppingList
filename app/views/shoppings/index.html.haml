@@ -15,10 +15,10 @@
 						= shopping.note 
 					.date-addend
 						= shopping.created_at.strftime("%Y年%m月%d日 %H時%M分")
-					%input.delete-button{"type":	"reset","value":	"削除" }
-
+					= form_with model:shopping, method: :delete, local: true do |f|
+						= f.submit '削除',class: 'delete-button'
+						
 	.right-side
-
 
 .footer
 	= form_with model: [@shopping], html: {class: "form"}, local: true do |f|
