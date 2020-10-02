@@ -24,35 +24,32 @@
 		width: calc(100vw - 200px - 200px);
 		height: calc(100vh - 112px - 112px);
 		overflow: scroll;
-		.product{	
-			margin: 32px 0 0 10px;
-			.product-list{
-				display: flex;
-				background-color: #ffffff;
-				width: 1000px;
-				height: 32px;
-				padding: 8px 0 0 8px ;
-				margin-top: 10px;
-				.product-name{
-					width: 30%;
-				}
-				.note{
-					width: 30%;
-				}
-				.date-addend{
-					width: 20%;;
-					font-size: 8px;
-				}
-				.delete-button{
-					height: 40px;
-					width: 80px;;
-					margin-left: 10px;
-					position: relative;
-					bottom: 8px;
-					left: 110px;
-				}	
-			}											
-		}
+		.product-list{
+			display: flex;
+			background-color: #ffffff;
+			width: 1000px;
+			height: 32px;
+			padding: 8px 0 0 8px ;
+			margin: 10px 0px 0px 10px;;
+			.product-name{
+				width: 30%;
+			}
+			.note{
+				width: 30%;
+			}
+			.date-addend{
+				width: 20%;;
+				font-size: 8px;
+			}
+			.delete-button{
+				height: 40px;
+				width: 80px;;
+				margin-left: 10px;
+				position: relative;
+				bottom: 8px;
+				left: 110px;
+			}	
+		}											
 	}
 
 	.right-side{

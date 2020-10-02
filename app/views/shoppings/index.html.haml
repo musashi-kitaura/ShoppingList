@@ -6,17 +6,16 @@
 	.left-side
 
 	.main-list
-		.product
-			- @shoppings.each do |shopping| 
-				.product-list
-					.product-name
-						= shopping.name
-					.note
-						= shopping.note 
-					.date-addend
-						= shopping.created_at.strftime("%Y年%m月%d日 %H時%M分")
-					= form_with model:shopping, method: :delete, local: true do |f|
-						= f.submit '削除',class: 'delete-button'
+		- @shoppings.each do |shopping|
+			.product-list{"data-shopping-id": shopping.id, "data-user-name": shopping.name} 
+				.product-name
+					= shopping.name
+				.note
+					= shopping.note 
+				.date-addend
+					= shopping.created_at.strftime("%Y年%m月%d日 %H時%M分")
+				= form_with model:shopping, method: :delete, local: true ,class:"delete"do |f|
+					= f.submit '削除',class: 'delete-button'
 						
 	.right-side
 
@@ -25,3 +24,16 @@
 		= f.text_field :name, class: 'product-name', 'placeholder': '商品名'
 		= f.text_field :note, class: 'product-note', 'placeholder': 'メモ'
 		= f.submit '追加', class: 'product-button'
+
+
+
+
+
+
+
+
+
+
+
+
+

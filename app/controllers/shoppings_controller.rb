@@ -5,14 +5,20 @@ class ShoppingsController < ApplicationController
 	end	
 
 	def create
-		Shopping.create(shopping_params)
-		redirect_to root_path
+		@shopping = Shopping.create(shopping_params)
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.json  
+		end
 	end	
-
+	
 	def destroy
 		shopping = Shopping.find(params[:id])
 		shopping.destroy
-		redirect_to root_path
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.json  
+		end
 	end	
 		
 	private 
